@@ -1,6 +1,4 @@
 
-drawPyramid(5);
-
 
 /**
  * drawPyramid

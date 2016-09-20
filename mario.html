@@ -2,7 +2,7 @@
 <html>
 <head>
     <style>
-        p {
+        .pyramid {
             font-family: "Courier New", monospace;
             line-height: 0;
             font-size: 30px;
@@ -11,9 +11,18 @@
 </head>
 <body>
     <h1>Mario 1</h1>
-    <h4>
-        Behold this wonderful pyramid:
-    </h4>
+
+    <p>
+        When you say <strong>"Build a pyramid,"</strong>
+        <br>
+        I say:
+    </p>
+
+    <label>
+        How high?
+        <input type="text" id="height"/>
+    </label>
+    <button id="build-button">Build it!</button>
 
     <script src="mario.js"></script>
 </body>
