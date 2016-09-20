@@ -1,6 +1,12 @@
 
 drawPyramid(5);
 
+
+/**
+ * drawPyramid
+ *
+ * Renders, in the HTML document, a Mario pyramid of the specified height
+ */
 function drawPyramid(height) {
     // height is the number of rows. For each row...
     for (var row = 0; row < height; row++) {
@@ -14,7 +20,7 @@ function drawPyramid(height) {
         var rowStr = "";
         for (var i = 0; i < numSpaces; i++) {
             rowStr += ".";
-            // using a period instead of a space because HTML ignores whitespace
+            // we are using a period instead of a space because HTML ignores whitespace
         }
         for (var i = 0; i < numBricks; i++) {
             rowStr += "#";
