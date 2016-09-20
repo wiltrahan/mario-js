@@ -8,7 +8,7 @@ function printPyramid(height) {
         var numBricks = row + 2;
 
         // figure out how many space characters
-        var numSpaces = height - row;
+        var numSpaces = height - row - 1;
 
         // build up a string for this row
         var rowStr = "";
