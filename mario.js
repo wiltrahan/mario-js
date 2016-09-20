@@ -1,7 +1,7 @@
 
-printPyramid(5);
+drawPyramid(5);
 
-function printPyramid(height) {
+function drawPyramid(height) {
     // height is the number of rows. For each row...
     for (var row = 0; row < height; row++) {
         // figure out how many bricks in this row (aka the '#' characters)
