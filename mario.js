@@ -2,24 +2,16 @@
 printPyramid(5);
 
 function printPyramid(height) {
-    // height is the number of rows. For each row...
-    for (var row = 0; row < height; row++) {
-        // figure out how many bricks in this row (aka the '#' characters)
-        var numBricks = row + 2;
+    console.log("Uh oh... the pyramid is under construction.");
+    console.log("Check back soon, our developers are hard at work as we speak!");
 
-        // figure out how many space characters
-        var numSpaces = height - row;
+    // TODO
+    // print a pyramid of '#' characters to the console
+    // for example, if height is 5, the console should look like this:
+    //     ##
+    //    ###
+    //   ####
+    //  #####
+    // ######
 
-        // build up a string for this row
-        var rowStr = "";
-        for (var i = 0; i < numSpaces; i++) {
-            rowStr += " ";
-        }
-        for (var i = 0; i < numBricks; i++) {
-            rowStr += "#";
-        }
-
-        // print the
-        console.log(rowStr);
-    }
 }
