@@ -6,26 +6,28 @@ var formElem = document.getElementById("draw-form");
 // set a handler function for the form's submission event
 formElem.onsubmit = function(event) {
 
-    // prevent the form from submitting (otherwise page will refresh)
+    // QUIZ
+    // what happens if we don't do this?
     event.preventDefault();
 
-    // clear any previous error message that might be displayed from last time
+    // QUIZ
+    // what happens if we don't do this?
     clearError();
 
     // figure out the height the user typed
     heightStr = heightElem.value;
 
+    // TODO
     // if they didn't type anything, yell at them and exit early
-    if (heightStr == "") {
-        displayError("Please provide a height");
-        return;
-    }
+
 
     // convert the string to an int
     height = parseInt(heightStr);
 
-    // if the height is negative or not-a-number, yell at them and exit early
-    if (isNaN(height) || height < 0) {
+    // if the height is not-a-number, yell at them and exit early
+    // TODO
+    // negative numbers should also be rejected here
+    if (isNaN(height)) {
         displayError("That's not a valid height.");
         return;
     }
@@ -59,8 +61,7 @@ function displayError(message) {
  * Undisplays the error message and removes the red CSS style
  */
 function clearError(message) {
-    heightElem.className = "";
-    document.querySelector(".error-message").innerHTML = "";
+    // TODO
 }
 
 
