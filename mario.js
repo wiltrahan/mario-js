@@ -3,10 +3,13 @@
 var heightElem = document.getElementById("height");
 var formElem = document.getElementById("draw-form");
 
+// set a handler function for the form's submission event
 formElem.onsubmit = function(event) {
 
+    // prevent the form from submitting (otherwise page will refresh)
     event.preventDefault();
 
+    // clear any previous error message that might be displayed from last time
     clearError();
 
     // figure out the height the user typed
@@ -39,11 +42,22 @@ formElem.onsubmit = function(event) {
 }
 
 
+/**
+ * displayError
+ *
+ * Displays an error message on the text input, and colors it red
+ */
 function displayError(message) {
     heightElem.className = "invalid-field";
     document.querySelector(".error-message").innerHTML = message;
 }
 
+
+/*
+ * clearError
+ *
+ * Undisplays the error message and removes the red CSS style
+ */
 function clearError(message) {
     heightElem.className = "";
     document.querySelector(".error-message").innerHTML = "";
@@ -78,14 +92,9 @@ function drawPyramid(height) {
             rowStr += "#";
         }
 
-        // create a text element with the string of characters
-        textElem = document.createTextNode(rowStr);
-
-        // create a <p> element with the text inside
+        // make a <p> element for this row, and insert it into the #pyramid container
         rowElem = document.createElement("p");
         rowElem.innerHTML = rowStr;
-
-        // insert the paragraph as a child of the container <div>
         document.getElementById("pyramid").appendChild(rowElem);
     }
 }
