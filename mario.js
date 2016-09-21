@@ -1,17 +1,48 @@
 
 
-button = document.getElementById("draw-button");
-button.onclick = function() {
+var heightElem = document.getElementById("height");
+
+var formElem = document.getElementById("draw-form");
+
+formElem.onsubmit = function(event) {
+
+    event.preventDefault();
+
+    clearError();
 
     // figure out the height the user typed
-    heightStr = document.getElementById("height").value
+    heightStr = heightElem.value;
+
+    // if they didn't type anything, yell at them and exit early
+    if (heightStr == "") {
+        displayError("Please provide a height");
+        return;
+    }
 
     // convert the string to an int
     height = parseInt(heightStr);
 
-    // draw pyramid with that height
+    // if the height is negative or not-a-number, yell at them and exit early
+    if (isNaN(height) || height < 0) {
+        displayError("That's not a valid height!");
+        return;
+    }
+
+    // draw pyramid with the specified height
     drawPyramid(height);
 }
+
+
+function displayError(message) {
+    heightElem.className = "invalid-field";
+    document.querySelector(".error-message").innerHTML = message;
+}
+
+function clearError(message) {
+    heightElem.className = "";
+    document.querySelector(".error-message").innerHTML = "";
+}
+
 
 
 /**
