@@ -1,6 +1,6 @@
 
 
-button = document.getElementById("build-button");
+button = document.getElementById("draw-button");
 button.onclick = function() {
 
     // figure out the height the user typed
