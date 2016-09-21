@@ -1,7 +1,6 @@
 
 
 var heightElem = document.getElementById("height");
-
 var formElem = document.getElementById("draw-form");
 
 formElem.onsubmit = function(event) {
@@ -24,7 +23,14 @@ formElem.onsubmit = function(event) {
 
     // if the height is negative or not-a-number, yell at them and exit early
     if (isNaN(height) || height < 0) {
-        displayError("That's not a valid height!");
+        displayError("That's not a valid height.");
+        return;
+    }
+
+    // if the height is absurdly tall, yell at them and exit early
+    var tooTall = 100;
+    if (height > tooTall) {
+        displayError("Are you cray? I can't build a pyramid that tall.");
         return;
     }
 
@@ -65,7 +71,8 @@ function clearError(message) {
          // build up a string for this row
          var rowStr = "";
          for (var i = 0; i < numSpaces; i++) {
-             rowStr += ".";
+             var spaceChar = "&nbsp";
+             rowStr += spaceChar;
          }
          for (var i = 0; i < numBricks; i++) {
              rowStr += "#";
@@ -76,7 +83,7 @@ function clearError(message) {
 
         // create a <p> element with the text inside
         rowElem = document.createElement("p");
-        rowElem.appendChild(textElem);
+        rowElem.innerHTML = rowStr;
 
         // insert the paragraph as a child of the container <div>
         document.getElementById("pyramid").appendChild(rowElem);
