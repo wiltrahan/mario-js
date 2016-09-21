@@ -1,10 +1,7 @@
 
 
-button = document.getElementById("draw-button");
-
 // TODO
-// designate a function to handle click events on the button
-
+// hook up the button's click event to our extractHeightAndThenDraw function
 
 
 function extractHeightAndThenDraw() {
@@ -16,12 +13,8 @@ function extractHeightAndThenDraw() {
     // convert the string to an int
     height = parseInt(heightStr);
 
-    // TODO (Extra credit)
-    // What if the parsing fails?
-
-
     // TODO
-    // draw pyramid with the given height
+    // draw the pyramid with the given height
 
 }
 
