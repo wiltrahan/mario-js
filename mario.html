@@ -3,9 +3,13 @@
 <head>
     <style>
         #pyramid {
-            font-family: "Courier New", monospace;
             line-height: 0;
             font-size: 30px;
+        }
+
+        body {
+            font-family: "Courier New", monospace;
+            text-align: center;
         }
 
         .invalid-field {
@@ -20,11 +24,10 @@
 <body>
     <h1>Mario 4</h1>
 
-    <p>
-        When you say <strong>"Draw a pyramid,"</strong>
-        <br>
-        I say:
-    </p>
+    <p>When you say</p>
+    <p><strong>Draw a pyramid</strong></p>
+    <p>I say:</p>
+    <br>
 
     <form id="draw-form">
         <label>
@@ -32,9 +35,11 @@
             <input type="text" id="height"/>
             <label class="error-message"></label>
         </label>
-        <br>
-        <input type="submit" value="Draw it!"/>
+        <br><br>
+        <input type="submit" value="Draw a pyramid"/>
     </form>
+
+    <br><br>
 
     <div id="pyramid"></div>
 
