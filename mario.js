@@ -1,16 +1,28 @@
 
 
-button = document.getElementById("build-button");
-button.onclick = function() {
+button = document.getElementById("draw-button");
 
-    // figure out the height the user typed
-    heightStr = document.getElementById("height").value
+// TODO
+// designate a function to handle click events on the button
+
+
+
+function extractHeightAndThenDraw() {
+
+    // TODO
+    // figure out the height the user typed (replace the "5" below)
+    heightStr = "5";
 
     // convert the string to an int
     height = parseInt(heightStr);
 
-    // draw pyramid with that height
-    drawPyramid(height);
+    // TODO (Extra credit)
+    // What if the parsing fails?
+
+
+    // TODO
+    // draw pyramid with the given height
+
 }
 
 
