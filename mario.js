@@ -31,7 +31,7 @@ function drawPyramid(height) {
         // set rowStr to be the inner text of the <p>
         rowElem.innerHTML = rowStr;
 
-        // insert the paragraph as a child of the <body>
+        // insert the paragraph as a child of the <div>
         document.body.appendChild(rowElem);
     }
 }
