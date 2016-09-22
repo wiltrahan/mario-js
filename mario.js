@@ -32,6 +32,6 @@ function drawPyramid(height) {
         rowElem.innerHTML = rowStr;
 
         // insert the paragraph as a child of the <div>
-        document.body.appendChild(rowElem);
+        document.getElementById("pyramid").appendChild(rowElem);
     }
 }
