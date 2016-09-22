@@ -2,15 +2,15 @@
 drawPyramid(5);
 
 
-    /**
-    * drawPyramid
-    *
-    * Renders, in the HTML document, a Mario pyramid of the specified height
-    */
-    function drawPyramid(height) {
+/**
+* drawPyramid
+*
+* Renders, in the HTML document, a Mario pyramid of the specified height
+*/
+function drawPyramid(height) {
 
-        // for each row....
-        for (var row = 0; row < height; row++) {
+    // for each row....
+    for (var row = 0; row < height; row++) {
 
         // figure out number of bricks and spaces
         var numBricks = row + 2;
