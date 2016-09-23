@@ -9,6 +9,13 @@ drawPyramid(5);
 */
 function drawPyramid(height) {
 
+    // get the pyramid container element
+    var container = document.getElementById("pyramid")
+
+    // delete the "under construction" stuff
+    var construction = document.getElementById("construction");
+    container.removeChild(construction);
+
     // for each row....
     for (var row = 0; row < height; row++) {
 
@@ -32,6 +39,6 @@ function drawPyramid(height) {
         rowElem.innerHTML = rowStr;
 
         // insert the paragraph as a child of the <div>
-        document.getElementById("pyramid").appendChild(rowElem);
+        container.appendChild(rowElem);
     }
 }
