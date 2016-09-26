@@ -86,7 +86,7 @@ function drawPyramid(height) {
         // build up a string for this row
         var rowStr = "";
         for (var i = 0; i < numSpaces; i++) {
-        var spaceChar = "&nbsp";
+            var spaceChar = "&nbsp"; // this is the HTML encoding for a space " "
             rowStr += spaceChar;
         }
         for (var i = 0; i < numBricks; i++) {
