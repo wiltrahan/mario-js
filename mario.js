@@ -27,7 +27,7 @@ formElem.onsubmit = function(event) {
 
     // if the height is not-a-number, yell at them and exit early
     // TODO 2
-    // negative numbers should also be rejected here
+    // negative numbers and zero should also be rejected here
     if (isNaN(height)) {
         displayError("That's not a valid height.");
         return;
