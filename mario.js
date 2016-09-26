@@ -17,15 +17,16 @@ formElem.onsubmit = function(event) {
     // figure out the height the user typed
     heightStr = heightElem.value;
 
-    // TODO
-    // if they didn't type anything, yell at them and exit early
+    // TODO 1
+    // if they didn't type anything at all, give a different error message,
+    // something like "Please provide a height"
 
 
     // convert the string to an int
     height = parseInt(heightStr);
 
     // if the height is not-a-number, yell at them and exit early
-    // TODO
+    // TODO 2
     // negative numbers should also be rejected here
     if (isNaN(height)) {
         displayError("That's not a valid height.");
@@ -61,7 +62,8 @@ function displayError(message) {
  * Undisplays the error message and removes the red CSS style
  */
 function clearError(message) {
-    // TODO
+    // TODO 3
+    // implement this function.
 }
 
 
