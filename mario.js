@@ -24,8 +24,8 @@ formElem.onsubmit = function(event) {
     // convert the string to an int
     height = parseInt(heightStr);
 
-    // if the height is negative or not-a-number, yell at them and exit early
-    if (isNaN(height) || height < 0) {
+    // if the height is not-a-number or not positive, yell at them and exit early
+    if (isNaN(height) || height < 1) {
         displayError("That's not a valid height.");
         return;
     }
