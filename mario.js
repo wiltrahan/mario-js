@@ -1,10 +1,7 @@
 
 
-var heightElem = document.getElementById("height");
-var formElem = document.getElementById("draw-form");
-
 // set a handler function for the form's submission event
-formElem.onsubmit = function(event) {
+$("#draw-form").submit(function(event) {
 
     // prevent the form from submitting (otherwise page will refresh)
     event.preventDefault();
@@ -13,7 +10,7 @@ formElem.onsubmit = function(event) {
     clearError();
 
     // figure out the height the user typed
-    heightStr = heightElem.value;
+    heightStr = $("#height").val();
 
     // if they didn't type anything, yell at them and exit early
     if (heightStr == "") {
@@ -26,7 +23,7 @@ formElem.onsubmit = function(event) {
 
     // if the height is not-a-number or not positive, yell at them and exit early
     if (isNaN(height) || height < 1) {
-        displayError("That's not a valid height.");
+        displayError(heightStr + ": That's not a valid height.");
         return;
     }
 
@@ -39,7 +36,7 @@ formElem.onsubmit = function(event) {
 
     // draw pyramid with the specified height
     drawPyramid(height);
-}
+});
 
 
 /**
@@ -48,8 +45,8 @@ formElem.onsubmit = function(event) {
  * Displays an error message on the text input, and colors it red
  */
 function displayError(message) {
-    heightElem.className = "invalid-field";
-    document.querySelector(".error-message").innerHTML = message;
+    $("#height").addClass("invalid-field");
+    $(".error-message").text(message);
 }
 
 
@@ -59,8 +56,8 @@ function displayError(message) {
  * Undisplays the error message and removes the red CSS style
  */
 function clearError(message) {
-    heightElem.className = "";
-    document.querySelector(".error-message").innerHTML = "";
+    $("#height").removeClass("invalid-field");
+    $(".error-message").text("");
 }
 
 
@@ -73,7 +70,7 @@ function clearError(message) {
 function drawPyramid(height) {
 
     // first, clear the old content
-    document.getElementById("pyramid").innerHTML = "";
+    $("#pyramid").empty();
 
     // for each row....
     for (var row = 0; row < height; row++) {
@@ -93,8 +90,7 @@ function drawPyramid(height) {
         }
 
         // make a <p> element for this row, and insert it into the #pyramid container
-        rowElem = document.createElement("p");
-        rowElem.innerHTML = rowStr;
-        document.getElementById("pyramid").appendChild(rowElem);
+        rowElem = $("<p>").html(rowStr);
+        $("#pyramid").append(rowElem);
     }
 }
