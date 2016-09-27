@@ -9,8 +9,9 @@ $("#draw-form").submit(function(event) {
     // clear any previous error message that might be displayed from last time
     clearError();
 
-    // figure out the height the user typed
-    heightStr = $("#height").val();
+    // TODO 4
+    // figure out the height the user typed (replace the "5" below)
+    heightStr = "5";
 
     // if they didn't type anything, yell at them and exit early
     if (heightStr == "") {
@@ -45,8 +46,9 @@ $("#draw-form").submit(function(event) {
  * Displays an error message on the text input, and colors it red
  */
 function displayError(message) {
-    $("#height").addClass("invalid-field");
-    $(".error-message").text(message);
+    // TODO 3
+    // implement this function using jQuery
+
 }
 
 
@@ -69,8 +71,9 @@ function clearError(message) {
  */
 function drawPyramid(height) {
 
-    // first, clear the old content
-    $("#pyramid").empty();
+    // TODO 2
+    // clear the old content from the #pyramid container
+
 
     // for each row....
     for (var row = 0; row < height; row++) {
@@ -89,8 +92,11 @@ function drawPyramid(height) {
             rowStr += "#";
         }
 
-        // make a <p> element for this row, and insert it into the #pyramid container
+        // make a <p> element for this row
         rowElem = $("<p>").html(rowStr);
-        $("#pyramid").append(rowElem);
+
+        // TODO 1
+        // insert the paragraph into the #pyramid container
+
     }
 }
