@@ -9,7 +9,7 @@ $("#draw-form").submit(function(event) {
     // clear any previous error message that might be displayed from last time
     clearError();
 
-    // TODO 4
+    // TODO 3
     // figure out the height the user typed (replace the "5" below)
     heightStr = "5";
 
@@ -46,7 +46,7 @@ $("#draw-form").submit(function(event) {
  * Displays an error message on the text input, and colors it red
  */
 function displayError(message) {
-    // TODO 3
+    // TODO 4
     // implement this function using jQuery
 
 }
